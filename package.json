@@ -2,11 +2,39 @@
   "name": "WebMSX",
   "title": "WebMSX - The online MSX emulator",
   "version": "6.0.8",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --config src/runtimerf/vite.config.ts",
+    "build": "grunt && tsc -b --project src/runtimerf/tsconfig.json && vite build --config src/runtimerf/vite.config.ts",
+    "build:core": "grunt",
+    "build:launcher": "tsc -b --project src/runtimerf/tsconfig.json && vite build --config src/runtimerf/vite.config.ts",
+    "lint": "oxlint --config src/runtimerf/.oxlintrc.json",
+    "preview": "vite preview --config src/runtimerf/vite.config.ts"
+  },
+  "dependencies": {
+    "@mantine/core": "^9.5.1",
+    "@mantine/dates": "^9.5.1",
+    "@mantine/form": "^9.5.1",
+    "@mantine/hooks": "^9.5.1",
+    "@mantine/notifications": "^9.5.1",
+    "@tabler/icons-react": "^3.46.0",
+    "dayjs": "^1.11.23",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
   "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
     "grunt": "",
     "grunt-contrib-clean": "",
     "grunt-contrib-concat": "",
     "grunt-contrib-uglify": "2.3.0",
-    "grunt-contrib-copy": ""
+    "grunt-contrib-copy": "",
+    "oxlint": "^1.75.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0"
   }
 }

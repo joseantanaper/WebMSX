@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome (localhost:5173)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src/runtimerf",
+      "userDataDir": "${workspaceFolder}/.vscode/chrome-profile"
+    },
+    {
+      "name": "Launch Chrome (localhost:5174)",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5174",
+      "webRoot": "${workspaceFolder}/src/runtimerf",
+      "userDataDir": "${workspaceFolder}/.vscode/chrome-profile"
+    },
+    {
+      "name": "Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/src/runtimerf"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Dev Server + Chrome",
+      "configurations": ["Launch Chrome (localhost:5173)"],
+      "preLaunchTask": "npm: dev"
+    }
+  ]
+}
